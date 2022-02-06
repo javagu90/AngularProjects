@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html lang="en" ng-app="myFirstApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>decima clase (rootScope & Child)</title>
+	</head>
+	<body ng-controller="FirstController">
+
+		<p>
+			<strong>Valor de first controller:</strong>
+				{{nombre}}
+		</p>
+		<p>
+			<strong>Valor del padre de first controller:</strong>
+			{{$parent.nombre}}
+		</p>
+
+		<div ng-controller="ChildController">
+			<p>
+				<strong>Valor del hijo de first controller (Child Controller)</strong>
+				{{nombre}}
+			</p>
+			<input type="text" ng-model="$parent.nombre">
+			<p>
+				<strong>Valor del Padre del Padre del Hijo (Abuelo)</strong>
+				{{$parent.$parent.nombre}}
+			</p>
+			
+		</div>
+
+		<script src="angular.min.js"></script>
+		<script src="controller.js"></script>
+	</body>
+	</html>	

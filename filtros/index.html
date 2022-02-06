@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+	<html lang="en" ng-app="mainModule">
+	<head>
+		<meta charset="UTF-8">
+		<title>octava clase (Filtros)</title>
+	</head>
+	<body ng-controller="FiltersController">
+		{{miHtml | removeHtml}}
+	</br>
+		{{dataJson | json}}
+	</br>
+		{{costo |currency}}
+	</br>
+		{{euros | currency :'%'}}
+		<script src="angular.min.js"></script>
+		<script src="angular-local-storage.min.js"></script>
+		<script src="controller.js"></script>
+	</body>
+	</html>	

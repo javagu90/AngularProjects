@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+	<html lang="en" ng-app="MyFirstApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sexta clase: http (1ra parte)</title>
+	</head>
+	<body ng-controller="FirstController">
+
+		<ul>
+			<li ng-repeat="post in posts">
+				<strong>{{post.title}}</strong>
+			<br>
+			<p>{{post.body}}</p>
+			</li>
+		</ul>
+		<script src="angular.min.js"></script>
+		<script src="controller.js"></script>
+	</body>
+	</html>	

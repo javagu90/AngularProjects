@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+	<html lang="en" ng-app="mainModule">
+	<head>
+		<meta charset="UTF-8">
+		<title>novena clase (apply-digest-watcher)</title>
+	</head>
+	<body ng-controller="FirstController">
+		<h1>{{nombre}}</h1>
+
+		<script src="angular.min.js"></script>
+		<script>
+			angular.module("mainModule",[]).controller("FirstController", function($scope)
+			{
+				$scope.nombre="Javier";
+			$scope.setName=function()
+			{
+				$scope.nombre="Jav";
+				console.log($scope.nombre);
+			}
+
+			$scope.originalName=function()
+			{
+				$scope.nombre="Javier";
+				console.log($scope.nombre);
+			}
+
+			$scope.intervalName=function()
+			{
+				setTimeout(function(){
+				//$scope.$digest();
+				$scope.$apply(function()
+				{
+					$scope.nombre="Javy";
+					console.log("cambio en 2 segundos realizado " + $scope.nombre);	
+				});
+			  },2000)
+			}
+			});
+
+		</script>
+		<button ng-click="nombre = 'Javy' ">Cambia mi nombre</button>
+		<button ng-click="setName()">Cambia a mi otro nombre</button>
+		<button ng-click="originalName()">Regresa a mi nombre original</button>
+		<button ng-click="intervalName()">Retrasa mi nombre </button>
+	</body>
+	</html>	
